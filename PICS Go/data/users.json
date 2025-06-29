@@ -1,0 +1,80 @@
+[
+  {
+    "id": "mchxqra97osmo9l546x",
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "$2a$10$PaYsSq.u3xL6/tO5183rse17qJCDswU26ngyaPP68iJapMlcptGIi",
+    "profilePicture": "/uploads/default-avatar.png",
+    "bio": "",
+    "followers": [],
+    "following": [],
+    "posts": [],
+    "likedPosts": [],
+    "createdAt": "2025-06-29T17:19:58.881Z"
+  },
+  {
+    "id": "mchxrff6rllgwy6f9v",
+    "username": "testuser2",
+    "email": "test2@example.com",
+    "password": "$2a$10$u.Nyl73jPXYbIG9aXhCwlOK5Zk/ApnoBpKeIi/mkLweDReFQvvaAm",
+    "profilePicture": "/uploads/default-avatar.png",
+    "bio": "",
+    "followers": [],
+    "following": [],
+    "posts": [],
+    "likedPosts": [],
+    "createdAt": "2025-06-29T17:20:30.162Z"
+  },
+  {
+    "id": "mchxuecd4y3zrc8mtoy",
+    "username": "testuser3",
+    "email": "test3@example.com",
+    "password": "$2a$10$OcIr5bVK/nhAmpOCx9x7R.oHut5FMIXlfu5S/qLghpfpUwEYncjp2",
+    "profilePicture": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iMzUiIHI9IjE1IiBmaWxsPSIjQ0NDIi8+CjxwYXRoIGQ9Ik0yMCA3NUMyMCA2NS4wNTc2IDI4LjA1NzYgNTcgMzggNTdINjJDNzEuOTQyNCA1NyA4MCA2NS4wNTc2IDgwIDc1VjgwSDIwVjc1WiIgZmlsbD0iI0NDQyIvPgo8L3N2Zz4K",
+    "bio": "",
+    "followers": [],
+    "following": [],
+    "posts": [],
+    "likedPosts": [],
+    "createdAt": "2025-06-29T17:22:48.733Z"
+  },
+  {
+    "id": "mchy41m5ystq8mknr7",
+    "username": "testuser4",
+    "email": "test4@example.com",
+    "password": "$2a$10$/e9EwOkb0BzCGjXd27uzBOWLt7RCqI5CegMtt1HKFjsxlaqdL8qG6",
+    "profilePicture": "/uploads/default-avatar.svg",
+    "bio": "",
+    "followers": [],
+    "following": [],
+    "posts": [],
+    "likedPosts": [],
+    "createdAt": "2025-06-29T17:30:18.797Z"
+  },
+  {
+    "id": "mchy5ey5biqncwfx6nv",
+    "username": "testuser5",
+    "email": "test5@example.com",
+    "password": "$2a$10$WydfnkMrYfNSh8UwXKmX7.x9L6Nu9XmcrZWTAzfMX7phtMq.FRvWm",
+    "profilePicture": "/uploads/default-avatar.svg",
+    "bio": "",
+    "followers": [],
+    "following": [],
+    "posts": [],
+    "likedPosts": [],
+    "createdAt": "2025-06-29T17:31:22.733Z"
+  },
+  {
+    "id": "mchyfqvvff5r4hsidk",
+    "username": "testuser6",
+    "email": "test6@example.com",
+    "password": "$2a$10$5GNAdOrsUmah1ey2LUrh2ulpKmjjvRhEKCABO7Rq.vBr6HpbpoTWS",
+    "profilePicture": "/uploads/default-avatar.svg",
+    "bio": "",
+    "followers": [],
+    "following": [],
+    "posts": [],
+    "likedPosts": [],
+    "createdAt": "2025-06-29T17:39:24.763Z"
+  }
+]

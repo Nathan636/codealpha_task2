@@ -1,0 +1,57 @@
+[
+  {
+    "id": "sample1",
+    "userId": "sample1",
+    "image": "https://picsum.photos/600/400?random=1",
+    "caption": "Amazing sunset captured today! Nature never fails to amaze me. 🌅 #photography #sunset #nature",
+    "tags": ["photography", "sunset", "nature"],
+    "location": "Beach View",
+    "likes": [],
+    "comments": [],
+    "createdAt": "2025-06-29T15:46:00.000Z"
+  },
+  {
+    "id": "sample2",
+    "userId": "sample2",
+    "image": "https://picsum.photos/600/400?random=2",
+    "caption": "Exploring the hidden gems of the city today. Every corner has a story to tell! 📸 #travel #city #exploration",
+    "tags": ["travel", "city", "exploration"],
+    "location": "Downtown",
+    "likes": [],
+    "comments": [],
+    "createdAt": "2025-06-29T12:46:00.000Z"
+  },
+  {
+    "id": "sample3",
+    "userId": "sample3",
+    "image": "https://picsum.photos/600/400?random=3",
+    "caption": "Street art that speaks volumes. The colors and emotions in this piece are incredible! 🎨 #streetart #urban #culture",
+    "tags": ["streetart", "urban", "culture"],
+    "location": "Arts District",
+    "likes": [],
+    "comments": [],
+    "createdAt": "2025-06-28T17:46:00.000Z"
+  },
+  {
+    "id": "sample4",
+    "userId": "sample4",
+    "image": "https://picsum.photos/600/400?random=4",
+    "caption": "Mountain peaks covered in snow. The silence up here is absolutely magical! 🏔️ #mountains #winter #peace",
+    "tags": ["mountains", "winter", "peace"],
+    "location": "Alpine Peak",
+    "likes": [],
+    "comments": [],
+    "createdAt": "2025-06-27T17:46:00.000Z"
+  },
+  {
+    "id": "sample5",
+    "userId": "sample5",
+    "image": "https://picsum.photos/600/400?random=5",
+    "caption": "City lights at night create such a beautiful symphony of colors! 🌃 #citylights #night #urban",
+    "tags": ["citylights", "night", "urban"],
+    "location": "City Center",
+    "likes": [],
+    "comments": [],
+    "createdAt": "2025-06-26T17:46:00.000Z"
+  }
+]

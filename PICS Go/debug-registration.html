@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Registration</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .form-group { margin: 10px 0; }
+        input { padding: 8px; width: 200px; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        .result { margin-top: 20px; padding: 10px; border: 1px solid #ccc; white-space: pre-wrap; }
+        .error { background: #f8d7da; color: #721c24; }
+        .success { background: #d4edda; color: #155724; }
+    </style>
+</head>
+<body>
+    <h1>Debug Registration</h1>
+    
+    <form id="debugForm">
+        <div class="form-group">
+            <label>Username:</label><br>
+            <input type="text" id="username" value="testuser" required>
+        </div>
+        <div class="form-group">
+            <label>Email:</label><br>
+            <input type="email" id="email" value="test@example.com" required>
+        </div>
+        <div class="form-group">
+            <label>Password:</label><br>
+            <input type="password" id="password" value="password123" required>
+        </div>
+        <button type="submit">Test Registration</button>
+    </form>
+    
+    <div id="result" class="result" style="display: none;"></div>
+
+    <script>
+        document.getElementById('debugForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.className = 'result';
+            resultDiv.innerHTML = 'Testing registration...\n';
+            
+            try {
+                console.log('Making registration request...');
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, email, password })
+                });
+                
+                console.log('Response status:', response.status);
+                console.log('Response headers:', response.headers);
+                
+                resultDiv.innerHTML += `Status: ${response.status}\n`;
+                resultDiv.innerHTML += `Status Text: ${response.statusText}\n`;
+                
+                // Check if response is ok
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                // Try to get response text first
+                const responseText = await response.text();
+                console.log('Response text:', responseText);
+                resultDiv.innerHTML += `Response Text: ${responseText}\n`;
+                
+                // Try to parse as JSON
+                let data;
+                try {
+                    data = JSON.parse(responseText);
+                    console.log('Parsed JSON:', data);
+                    resultDiv.innerHTML += `Parsed JSON: ${JSON.stringify(data, null, 2)}\n`;
+                } catch (parseError) {
+                    console.error('JSON parse error:', parseError);
+                    resultDiv.innerHTML += `JSON Parse Error: ${parseError.message}\n`;
+                    resultDiv.className = 'result error';
+                    return;
+                }
+                
+                if (data.token && data.user) {
+                    resultDiv.innerHTML += `\n✅ SUCCESS!\n`;
+                    resultDiv.innerHTML += `Token: ${data.token.substring(0, 50)}...\n`;
+                    resultDiv.innerHTML += `User ID: ${data.user.id}\n`;
+                    resultDiv.innerHTML += `Username: ${data.user.username}\n`;
+                    resultDiv.className = 'result success';
+                } else {
+                    resultDiv.innerHTML += `\n❌ Missing token or user data\n`;
+                    resultDiv.className = 'result error';
+                }
+                
+            } catch (error) {
+                console.error('Registration error:', error);
+                resultDiv.innerHTML += `\n❌ ERROR: ${error.message}\n`;
+                resultDiv.className = 'result error';
+            }
+        });
+    </script>
+</body>
+</html> 

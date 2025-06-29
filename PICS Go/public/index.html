@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PICS Go - Share Your Moments</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1><i class="fas fa-camera"></i> PICS Go</h1>
+            </div>
+            <div class="nav-search">
+                <input type="text" id="searchInput" placeholder="Search users...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#" class="nav-link" id="homeLink"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="nav-link" id="exploreLink"><i class="fas fa-compass"></i> Explore</a>
+                <a href="#" class="nav-link" id="profileLink"><i class="fas fa-user"></i> Profile</a>
+                <a href="#" class="nav-link" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Login</a>
+                <a href="#" class="nav-link" id="logoutBtn" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Share Your Moments with the World</h1>
+            <p>Join thousands of photographers and creators sharing their best shots</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="getStartedBtn">Get Started</button>
+                <button class="btn btn-secondary" id="exploreBtn">Explore Photos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Public Feed Section -->
+    <section id="publicFeedSection" class="public-feed-section">
+        <div class="container">
+            <h2>Latest Photos</h2>
+            <div id="publicPostsFeed" class="posts-feed">
+                <!-- Public posts will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Auth Forms -->
+    <div id="authContainer" class="auth-container hidden">
+        <div class="auth-box">
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="loginTab">Login</button>
+                <button class="auth-tab" id="registerTab">Register</button>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form">
+                <h2>Welcome Back</h2>
+                <div class="form-group">
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+
+            <!-- Register Form -->
+            <form id="registerForm" class="auth-form hidden">
+                <h2>Join PICS Go</h2>
+                <div class="form-group">
+                    <input type="text" id="registerUsername" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="main-content hidden">
+        <!-- Feed Section -->
+        <section id="feedSection" class="feed-section">
+            <div class="container">
+                <!-- Create Post -->
+                <div class="create-post">
+                    <div class="post-form">
+                        <textarea id="postCaption" placeholder="What's on your mind?"></textarea>
+                        <div class="post-actions">
+                            <label for="postImage" class="btn btn-secondary">
+                                <i class="fas fa-image"></i> Add Photo
+                            </label>
+                            <input type="file" id="postImage" accept="image/*" hidden>
+                            <button id="createPostBtn" class="btn btn-primary">Post</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Posts Feed -->
+                <div id="postsFeed" class="posts-feed">
+                    <!-- Posts will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profileSection" class="profile-section hidden">
+            <div class="container">
+                <div class="profile-header">
+                    <div class="profile-info">
+                        <img id="profilePicture" src="/uploads/default-avatar.png" alt="Profile Picture">
+                        <div class="profile-details">
+                            <h2 id="profileUsername">Username</h2>
+                            <p id="profileBio">Bio</p>
+                            <div class="profile-stats">
+                                <span><strong id="postCount">0</strong> posts</span>
+                                <span><strong id="followerCount">0</strong> followers</span>
+                                <span><strong id="followingCount">0</strong> following</span>
+                            </div>
+                            <button id="editProfileBtn" class="btn btn-secondary">Edit Profile</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="userPosts" class="user-posts">
+                    <!-- User posts will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Explore Section -->
+        <section id="exploreSection" class="explore-section hidden">
+            <div class="container">
+                <h2>Discover People</h2>
+                <div id="userSuggestions" class="user-suggestions">
+                    <!-- User suggestions will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <div id="postModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalPostContent"></div>
+        </div>
+    </div>
+
+    <div id="editProfileModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Profile</h2>
+            <form id="editProfileForm">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="editUsername" required>
+                </div>
+                <div class="form-group">
+                    <label>Bio</label>
+                    <textarea id="editBio" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Profile Picture</label>
+                    <input type="file" id="editProfilePicture" accept="image/*">
+                </div>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
